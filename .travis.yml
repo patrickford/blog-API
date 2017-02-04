@@ -1,0 +1,11 @@
+language: node_js
+node_js: node
+services:
+- mongodb
+deploy:
+  provider: heroku
+  api_key:
+    secure: CsnNFLNxFJUYKSP1qC4KXzAKQfkQVcPffINTbtnbtrBizgkkr5LhNZt0nvTR5eC0qkqIRoT8Xlc6dEwzOHkPMmw4OEZ4fh7psfTMVFwVrAaBt4zRssrEVYwasAFYrrX/5dsIvwx/HDjqY5lxLG3Y+NN51JcI+rsOcqtPuSGnx+X0Q9xIi0zzhhFCxg7Ly4S0+SXRT4bDVV+6Pg7SrSkI4rqGiPSwomhzwdDVq/W451Cuun/eheTs91MBPkliVxGVVf/gIl2x30fqHPLJO9coNhP2qQDpYHdUvgFaj05Gil+zEdWUUMo/NuIEghsgIsbPf6rn/Ad0lj6j9lnEVZ3gJ6ecLv34zEHj/b6NMYteMFigrt48fYgnF5UuasZEKMFYuDoxlULtg6IRi43x2FJz+ZlvjsET+GStgACqZ5TU4PLyvSrEmtvR0uXKul7+WEC3rKU6Y8eVUXeujjd6YnQzJkjInzQqcv2wSdknY7VM0ofRD7Ll2j7zMUjh1LnCI+Qw+KzmCRMON2f0NJ1sEc+e7Nu2cZzawE/Evb5ndobAGwoyaquyfBX0QbjEajYSGH6OnDo9Oi3HpyoJ1RvxJe8R+23Jg0s/RiDIG/qLGBe8+/a63jm7SqO8+AGDAjjWBn6+UPjFaqh3rQjjieRhh6eQ3MpmNF0DMy3ZNoIkVc+9m1I=
+  app: mighty-forest-34302
+  on:
+    repo: sallystudent2017/blog-app-test-ci-challenge-solution

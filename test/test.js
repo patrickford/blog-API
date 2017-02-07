@@ -51,7 +51,7 @@ describe('Blog Posts', function() {
       publishDate: 'March 1st, 2016'
     };
     return chai.request(app)
-      .get('/blog-posts/:id')
+      .get('/blog-posts')
       .then(function(res) {
         updateData.id = res.body[0].id;
         return chai.request(app)
@@ -68,7 +68,7 @@ describe('Blog Posts', function() {
 
   it('should delete items on DELETE', function() {
     return chai.request(app)
-      .get('/blog-posts/:id')
+      .get('/blog-posts')
       .then(function(res) {
         return chai.request(app)
           .delete(`/blog-posts/${res.body[0].id}`);

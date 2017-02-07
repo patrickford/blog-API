@@ -54,7 +54,7 @@ app.put('/blog-posts/:id', jsonParser, (req, res) => {
       author: req.body.author,
       publishDate: req.body.publishDate
     });
-    res.status(204).json(updatedItem);
+    res.status(200).json(updatedItem);
 });
 
 app.delete('/blog-posts/:id', (req, res) => {
@@ -97,6 +97,6 @@ if (require.main === module) {
 
 module.exports = {app, runServer, closeServer};
 
-app.listen(process.env.PORT || 8080, () => {
+/*app.listen(process.env.PORT || 8080, () => {
   console.log(`Your app is listening on port ${process.env.PORT || 8080}`);
-});
+});*/

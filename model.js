@@ -1,4 +1,34 @@
 const uuid = require('uuid');
+const mongoose = require('mongoose');
+
+// schema
+const blogSchema = mongoose.Schema({
+  title: {type: String, required: true},
+  content: {type: String, required: true},
+  author: {
+    firstName: String,
+    lastName: String,
+  }
+  created: {type: String}
+});
+
+//virtual
+blogSchema.virtual('authorName').get(function() {
+  return `${this.author.firstName} ${this.author.lastName}`.trim()});
+// instance method to return some not all fields
+blogSchema.methods.apiRepr = function() {
+  return {
+    id: this._id,
+    title: this.title,
+    content: this.content,
+    author: this.authorName
+  };
+}
+const Blogs = mongoose.model('Blogs', blogSchema);
+module.exports = {Blogs};
+
+
+//below is creating local data base not using mongoose 
 
 // This module provides volatile storage, using a `BlogPost`
 // model. We haven't learned about databases yet, so for now
@@ -9,7 +39,7 @@ const uuid = require('uuid');
 // Our concern in this example is with how the API layer
 // is implemented, and getting it to use an existing model.
 
-
+/*
 function StorageException(message) {
    this.message = message;
    this.name = "StorageException";
@@ -67,4 +97,4 @@ function createBlogPostsModel() {
 }
 
 
-module.exports = {BlogPosts: createBlogPostsModel()};
+module.exports = {BlogPosts: createBlogPostsModel()};*/

@@ -12,6 +12,7 @@ describe('Blog Posts', function() {
   after(function() {
     return closeServer();
   });
+  
   it('should list items on GET', function() {
     return chai.request(app)
       .get('/blog-posts')

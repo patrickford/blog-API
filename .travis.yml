@@ -5,7 +5,7 @@ services:
 deploy:
   provider: heroku
   api_key:
-    secure: 2d6c7e38-e0e1-461c-9ebe-56e7965ab2ea
+    secure: xxx
   app: guarded-everglades-19439
   on:
     repo: patrickford/blog-API
